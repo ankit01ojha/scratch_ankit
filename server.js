@@ -2,9 +2,9 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-
 app.use(express.static(__dirname + '/'));
-app.get('*', (req, res) =>{
-    res.sendFile(path.resolve(__dirname, './src/index.js'));
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
+server.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
-app.listen(process.env.PORT || 8080);
