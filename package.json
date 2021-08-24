@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
+    "start": "webpack serve --config webpack.dev.js -p $PORT",
     "build": "webpack --config webpack.prod.js",
     "heroku-prebuild": "npm install --dev"
   },
