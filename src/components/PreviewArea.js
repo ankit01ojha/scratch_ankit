@@ -12,12 +12,12 @@ export default function PreviewArea() {
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);
           }}
-          class="z-2 p-100 w-16 h-16 bg-blue-500 rounded-full hover:bg-green-500 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none absolute bottom-0 right-0"
+          className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 p-100 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
         >
           <svg
             viewBox="0 0 20 20"
-            enable-background="new 0 0 20 20"
-            class="w-6 h-6 inline-block"
+            enableBackground="new 0 0 20 20"
+            className="inline-block w-6 h-6"
           >
             <path
               fill="#FFFFFF"
@@ -30,7 +30,7 @@ export default function PreviewArea() {
             <div className="absolute w-10 min-w-0 mb-4 ml-3 overflow-auto bg-blue-500 rounded-full bottom-10">
               <button  className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
-                  class="h-8 w-8 text-white"
+                  className="w-8 h-8 text-white"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export default function PreviewArea() {
               
               <button  className="px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
-                  class="h-8 w-8 text-white"
+                  className="w-8 h-8 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -66,7 +66,7 @@ export default function PreviewArea() {
               </button>
               <button  className="px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
-                  class="h-8 w-8 text-white"
+                  className="w-8 h-8 text-white"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -87,7 +87,7 @@ export default function PreviewArea() {
               
               <button className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
-                  class="h-8 w-8 text-white"
+                  className="w-8 h-8 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
