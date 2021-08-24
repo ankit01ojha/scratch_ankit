@@ -28,22 +28,41 @@ export default function MidArea( props) {
 
   const animation = (idname) => {
     switch(idname){
-      case 'movestep': return "moveForward 1s linear forwards";
-      case 'turnAnti': return "turnAnti 1s linear forwards";
-      case 'turnClock': return "animate-turnClock";
+      case 'movestep': return "turnAnti 1s linear forwards, moveForward 1s linear forwards";
+      case 'turnAnti': return "moveForward 1s linear forwards, turnAnti 1s linear forwards ";
+      case 'turnClock': return "turnClock 1s linear forwards, turnAnti 1s 1s linear forwards";
     }
   }
 
-  
-  return <div id="midarea"
-    onDragOver={(e) => {allowDrop(e)}} 
-    onDrop={(e) => {drop(e)}} 
-    className="flex flex-col items-center flex-none w-1/3 h-full p-2 overflow-y-auto"
-    onClick={(e) => {
-      catSpriteData.style.animation = "moveForward 1s linear forwards,turnAnti 1s linear forwards";
-                    console.log(catSpriteData.style.animation);
-    }
+  const removeLego = (event) => {
+    var data = document.querySelector("#midarea");
+    var childToRemove = data.querySelector(`#${event.target.id}`);
+    childToRemove.remove();
   }
-    >
-     </div>;
+
+  
+  
+  return (
+    <div
+      id="midarea"
+      onDragOver={(e) => {
+        allowDrop(e);
+      }}
+      onDrop={(e) => {
+        drop(e);
+      }}
+      onDragEnd={(e) => {
+        removeLego(e);
+      }}
+      
+      draggable={true}
+      className="flex flex-col items-center flex-none w-2/3 h-full p-2 overflow-y-auto"
+      onClick={(e) => {
+        // catSpriteData.style.animationPlayState = 'paused';
+        catSpriteData.style.animation =
+          animation(e.target.id);
+        console.log(catSpriteData.style.animation);
+      }}
+    ></div>
+  );
 }

@@ -13,6 +13,8 @@ const Motions = (props) => {
     event.dataTransfer.setData(idname, event.target.id);
   };
 
+  
+
   return (
     <>
       <div className="font-bold"> {"Motion"} </div>
@@ -23,6 +25,7 @@ const Motions = (props) => {
           dragStart(e, "movestep");
         }}
         draggable={true}
+        
       >
         {"Move"}
         <input

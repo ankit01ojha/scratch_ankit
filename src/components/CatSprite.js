@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CatSprite() {
   return (
-    <div id="catSprite" className="">
+    <div id="catSprite" className="moveForwardAnimation">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"

@@ -1,6 +1,6 @@
 .moveForwardAnimation{
     position: relative;
-    animation: moveForward 1s linear forwards;
+    /* animation: moveForward 1s linear forwards; */
     /* animation-duration: 1s; */
     /* animation-iteration-count: forwards; */
 
@@ -9,16 +9,13 @@
     /* 0% {left:0px} */
     100% {left:20px}
   }
-
-.turnAntiAnimation{
-    position: relative;
-    animation: turnAnti 1s linear forwards ;
-    /* animation-duration: 1s; */
-    /* animation-iteration-count: forwards; */
-
-}
 @keyframes turnAnti {
     100% {
         transform: rotate(-15deg);
+      }
+  }
+@keyframes turnClock {
+    100% {
+        transform: rotate(15deg);
       }
   }
