@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
-    "postinstal": "webpack --config webpack.prod.js",
+    "postinstal": "npm run-script build",
+    "start": "webpack serve --config webpack.dev.js --port $PORT --host 0.0.0.0",
+    "build": "webpack --config webpack.prod.js",
     "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {

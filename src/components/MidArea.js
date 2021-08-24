@@ -28,9 +28,9 @@ export default function MidArea( props) {
 
   const animation = (idname) => {
     switch(idname){
-      case 'movestep': return "turnAnti 1s linear forwards, moveForward 1s linear forwards";
-      case 'turnAnti': return "moveForward 1s linear forwards, turnAnti 1s linear forwards ";
-      case 'turnClock': return "turnClock 1s linear forwards, turnAnti 1s 1s linear forwards";
+      case 'movestep': return "moveForward 1s linear forwards";
+      case 'turnAnti': return "turnAnti 1s linear forwards ";
+      case 'turnClock': return "turnClock 1s linear forwards";
     }
   }
 

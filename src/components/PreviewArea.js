@@ -6,7 +6,7 @@ export default function PreviewArea() {
 
   return (
     <>
-      <div className="flex-none h-full p-2 overflow-y-auto">
+      <div className="flex-none w-2/3 h-full p-2 overflow-y-auto">
         <CatSprite />
         <button
           onClick={() => {
