@@ -9,13 +9,6 @@ module.exports = merge([
   common,
   {
     mode: "production",
-    entry: {
-      app: "./src/index.js",
-    },
-    output: {
-      filename: 'main.js',
-      path: path.resolve(__dirname, 'dist')
-    },
     optimization: {
       minimize: true,
       minimizer: [
