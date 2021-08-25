@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm run-script build",
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "heroku-prebuild": "npm install --dev"
+    "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
     "react": "^17.0.2",
