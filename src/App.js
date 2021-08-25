@@ -9,6 +9,7 @@ export default function App() {
   const [idname, setIdname] = useState('');
   const [newSpriteModal, setNewSpriteModal] = useState(false);
   const [spriteName, setSpriteName] = useState('yellow');
+  const [motionData, setMotionData] = useState({});
 
   const draggedElement = (value) => {
     setIdname(value);
@@ -22,6 +23,9 @@ export default function App() {
     setSpriteName(spriteName);
   }
 
+  const motionsData = (values) => {
+    setMotionData({...values});
+  }
   
   return (
     <div className="pt-6 font-sans bg-blue-100">
@@ -30,8 +34,8 @@ export default function App() {
           <>
           <div className="flex flex-row h-screen overflow-hidden ">
             <div className="flex flex-row flex-1 h-screen mr-2 overflow-hidden bg-white border-t border-r border-gray-200 rounded-tr-xl">
-              <Sidebar draggedElement={draggedElement} />{" "}
-              <MidArea idname={idname} />
+              <Sidebar draggedElement={draggedElement} motionsData={motionsData} />{" "}
+              <MidArea motionData={motionData} idname={idname} />
             </div>
             <div className="flex flex-row w-1/3 h-screen ml-2 overflow-hidden bg-white border-t border-l border-gray-200 rounded-tl-xl">
               <PreviewArea showNewSpriteModal={showNewSpriteModal} spriteName={spriteName}  />

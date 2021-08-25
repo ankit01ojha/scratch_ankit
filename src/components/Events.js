@@ -14,7 +14,7 @@ const Events = (props) => {
       <div className="font-bold"> {"Events"} </div>
       <div
         id="e1"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e1");
         }}
@@ -26,7 +26,7 @@ const Events = (props) => {
       </div>
       <div
         id="e2"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e2");
         }}
@@ -36,7 +36,7 @@ const Events = (props) => {
         {/* <div type="button" className="px-2 mx-2 text-white border-2 border-gray-300 rounded">
             {"space"}
             </div> */}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
           <option>space</option>
           <option>up arrow</option>
         </select>
@@ -44,7 +44,7 @@ const Events = (props) => {
       </div>
       <div
         id="e3"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e3");
         }}
@@ -54,27 +54,27 @@ const Events = (props) => {
       </div>
       <div
         id="e4"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e4");
         }}
         draggable={true}
       >
         {"When backdrop switches to "}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
           <option>backdrop 1</option>
         </select>
       </div>
       <div
         id="e5"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e5");
         }}
         draggable={true}
       >
         {"When"}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
           <option>loudness</option>
           <option>timer</option>
         </select>
@@ -90,42 +90,42 @@ const Events = (props) => {
       </div>
       <div
         id="e6"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e6");
         }}
         draggable={true}
       >
         {"When I receive "}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
           <option>New message</option>
           <option>message 1</option>
         </select>
       </div>
       <div
         id="e7"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e7");
         }}
         draggable={true}
       >
         {"Broadcast"}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded-full">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded-full">
           <option>New message</option>
           <option>message 1</option>
         </select>
       </div>
       <div
         id="e8"
-        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
+        className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-400 rounded cursor-pointer"
         onDragStart={(e) => {
           dragStart(e, "e8");
         }}
         draggable={true}
       >
         {"Broadcast"}
-        <select className="px-2 mx-2 text-white bg-yellow-500 border-2 border-gray-300 rounded-full">
+        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded-full">
           <option>New message</option>
           <option>message 1</option>
         </select>

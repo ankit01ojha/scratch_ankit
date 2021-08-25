@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Icon from "./Icon";
 
+let values = {};
 const Motions = (props) => {
   const [moveStep, setMoveStep] = useState("10");
   const [turnAnti, setTurnAnti] = useState("15");
   const [turnClock, setTurnClock] = useState("15");
-  const [goToX, setGoToX] = useState("-5");
-  const [goToY, setGoToY] = useState("-5");
+  const [goToX, setGoToX] = useState("5");
+  const [goToY, setGoToY] = useState("5");
+  
+  
+  useEffect(() => {
+    values['movestep'] = parseInt(moveStep);
+    values['turnAnti'] = parseInt(turnAnti);
+    values['turnClock'] = parseInt(turnClock);
+    values['goToX'] = parseInt(goToX);
+    values['goToY'] = parseInt(goToY);
+
+    props.motionsData(values);
+  },[moveStep, turnAnti, turnClock, goToX, goToY])
 
   const dragStart = (event, idname) => {
     props.draggedElement(idname);
