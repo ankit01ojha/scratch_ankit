@@ -6,11 +6,12 @@ import { useEffect } from "react";
 export default function MidArea( props) {
 
   const [catSpriteData, setCatSpriteData] = useState({});
+  // const [move, setMove] = useState({});
 
   useEffect(()=>{
     if(document.getElementById('catSprite'))
       setCatSpriteData(document.getElementById('catSprite'));
-    
+    // setMove();
   },[]);
 
   const allowDrop = (event) => {
@@ -58,10 +59,14 @@ export default function MidArea( props) {
       draggable={true}
       className="flex flex-col items-center flex-none w-2/3 h-full p-2 overflow-y-auto"
       onClick={(e) => {
-        // catSpriteData.style.animationPlayState = 'paused';
-        catSpriteData.style.animation =
-          animation(e.target.id);
-        console.log(catSpriteData.style.animation);
+        catSpriteData.style.animation = "";
+          setTimeout(function(){
+            catSpriteData.style.animation = animation(e.target.id);
+            var move = document.getElementById( 'catSprite' );
+            move.style.left = ( move.offsetLeft + 20 ) + 'px';
+          },10);
+          
+          
       }}
     ></div>
   );

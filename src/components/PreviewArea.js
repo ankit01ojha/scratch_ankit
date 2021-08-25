@@ -6,13 +6,13 @@ export default function PreviewArea() {
 
   return (
     <>
-      <div className="flex-none w-2/3 h-full p-2 overflow-y-auto">
+      <div className="absolute flex-none w-1/3 h-full p-2 overflow-hidden">
         <CatSprite />
         <button
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);
           }}
-          className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 p-100 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
+          className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
         >
           <svg
             viewBox="0 0 20 20"
@@ -27,7 +27,7 @@ export default function PreviewArea() {
             />
           </svg>
           {showMenu && (
-            <div className="absolute w-10 min-w-0 mb-4 ml-3 overflow-auto bg-blue-500 rounded-full bottom-10">
+            <div className="absolute w-10 min-w-0 mb-4 ml-3 overflow-hidden bg-blue-500 rounded-full bottom-10">
               <button  className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
