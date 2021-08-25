@@ -3,6 +3,7 @@
     left : 0px;
     transition: left 10ms linear;
     overflow: hidden;
+    transform: 1s;
     /* animation: moveForward 1s linear forwards; */
     /* animation-duration: 1s; */
     /* animation-iteration-count: forwards; */

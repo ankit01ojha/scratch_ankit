@@ -7,6 +7,7 @@ export default function MidArea( props) {
 
   const [catSpriteData, setCatSpriteData] = useState({});
   // const [move, setMove] = useState({});
+  var degrees=0;
 
   useEffect(()=>{
     if(document.getElementById('catSprite'))
@@ -61,9 +62,20 @@ export default function MidArea( props) {
       onClick={(e) => {
         catSpriteData.style.animation = "";
           setTimeout(function(){
-            catSpriteData.style.animation = animation(e.target.id);
+            // catSpriteData.style.animation = animation(e.target.id);
             var move = document.getElementById( 'catSprite' );
-            move.style.left = ( move.offsetLeft + 20 ) + 'px';
+            if(e.target.id === 'movestep'){
+              move.style.left = ( move.offsetLeft + 20 ) + 'px';
+            }
+            if(e.target.id ===  'turnAnti'){
+              degrees -=15;
+              move.style.transform = "rotate("+degrees+"deg)";
+            }
+            if(e.target.id ===  'turnClock'){
+              degrees +=15;
+              move.style.transform = "rotate("+degrees+"deg)";
+            }
+            
           },10);
           
           

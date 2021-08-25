@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import CatSprite from "./CatSprite";
+import CatSpriteBlue from "./CatSpriteBlue";
+import CatSpriteRed from "./CatSpriteRed";
 
-export default function PreviewArea() {
+const PreviewArea = (props) => {
   const [showMenu, setShowMenu] = useState(false);
+  
+  const whichSprite = (spriteName) => {
+    switch(spriteName){
+      case 'yellow' : return <CatSprite/>
+      case 'blue' : return <CatSpriteBlue/>
+      case 'red' : return <CatSpriteRed/>
+    }
+  }
 
   return (
     <>
       <div className="absolute flex-none w-1/3 h-full p-2 overflow-hidden">
-        <CatSprite />
+        <div id="catSprite" className="moveForwardAnimation">
+          {whichSprite(props.spriteName)}
+        </div>
+        
         <button
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);
+            showMenu ? props.showNewSpriteModal(true) : props.showNewSpriteModal(false);
           }}
           className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
         >
@@ -28,17 +42,17 @@ export default function PreviewArea() {
           </svg>
           {showMenu && (
             <div className="absolute w-10 min-w-0 mb-4 ml-3 overflow-hidden bg-blue-500 rounded-full bottom-10">
-              <button  className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
+              <div  className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   {" "}
                   <path stroke="none" d="M0 0h24v24H0z" />{" "}
@@ -47,9 +61,9 @@ export default function PreviewArea() {
                   <line x1="12" y1="4" x2="12" y2="16" />
                 </svg>
                 
-              </button>
+              </div>
               
-              <button  className="px-1 hover:bg-green-500 active:shadow-lg">
+              <div className="px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -57,24 +71,24 @@ export default function PreviewArea() {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
                   />
                 </svg>
-              </button>
-              <button  className="px-1 hover:bg-green-500 active:shadow-lg">
+              </div>
+              <div  className="px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke="currentColor"
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
                   {" "}
                   <path stroke="none" d="M0 0h24v24H0z" />{" "}
@@ -83,9 +97,9 @@ export default function PreviewArea() {
                   <path d="M21 3a16 16 0 0 1 -10.2 12.8" />{" "}
                   <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
                 </svg>
-              </button>
+              </div>
               
-              <button className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
+              <div className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
                   className="w-8 h-8 text-white"
                   fill="none"
@@ -93,13 +107,13 @@ export default function PreviewArea() {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                   />
                 </svg>{" "}
-              </button>
+              </div>
             </div>
           )}
         </button>
@@ -107,3 +121,5 @@ export default function PreviewArea() {
     </>
   );
 }
+
+export default PreviewArea;
