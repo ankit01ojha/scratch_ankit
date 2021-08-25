@@ -14,9 +14,7 @@ const NewSprite = (props) => {
             <button
               className="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:text-black-500 lg:mt-0"
               onClick={() => {
-                props.showModal
-                  ? props.showNewSpriteModal(true)
-                  : props.showNewSpriteModal(false);
+                props.showNewSpriteModal(false)
               }}
             >
               Back
@@ -25,13 +23,13 @@ const NewSprite = (props) => {
         </nav>
 
         <div className="container grid grid-cols-3 gap-2 mx-auto">
-          <div className="items-center mt-5 mb-5 border-2 border-white rounded cursor-pointer p-28 hover:border-gray-500" onClick={() => {props.whichSpriteName('yellow'); alert('Sprite has been selected, click back to check')}}>
+          <div className="items-center mt-5 mb-5 border-2 border-white rounded cursor-pointer p-28 hover:border-gray-500" onClick={() => {props.whichSpriteName('yellow');  props.showNewSpriteModal(false);}}>
             <CatSprite />
           </div>
-          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28 "  onClick={() => {props.whichSpriteName('blue');alert('Sprite has been selected, click back to check')}}>
+          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28 "  onClick={() => {props.whichSpriteName('blue'); props.showNewSpriteModal(false)}}>
             <CatSpriteBlue />
           </div>
-          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28"  onClick={() => {props.whichSpriteName('red');alert('Sprite has been selected, click back to check')}}>
+          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28"  onClick={() => {props.whichSpriteName('red'); props.showNewSpriteModal(false)}}>
             <CatSpriteRed />
           </div>
         </div>

@@ -24,7 +24,7 @@ const PreviewArea = (props) => {
         <button
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);
-            showMenu ? props.showNewSpriteModal(true) : props.showNewSpriteModal(false);
+             props.showNewSpriteModal(true) ;
           }}
           className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
         >

@@ -16,7 +16,7 @@ export default function App() {
   }
 
   const showNewSpriteModal = (showModal) => {
-    showModal ? setNewSpriteModal(false): setNewSpriteModal(true);
+    showModal ? setNewSpriteModal(true): setNewSpriteModal(false);
   }
 
   const whichSpriteName = (spriteName) => {
