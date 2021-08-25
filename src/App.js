@@ -10,6 +10,7 @@ export default function App() {
   const [newSpriteModal, setNewSpriteModal] = useState(false);
   const [spriteName, setSpriteName] = useState('yellow');
   const [motionData, setMotionData] = useState({});
+  const [spriteNames, setSpriteNames] = useState(['yellow']);
 
   const draggedElement = (value) => {
     setIdname(value);
@@ -21,6 +22,7 @@ export default function App() {
 
   const whichSpriteName = (spriteName) => {
     setSpriteName(spriteName);
+    spriteNames.indexOf(spriteName) === -1 ? spriteNames.push(spriteName) : '';
   }
 
   const motionsData = (values) => {
@@ -35,10 +37,10 @@ export default function App() {
           <div className="flex flex-row h-screen overflow-hidden ">
             <div className="flex flex-row flex-1 h-screen mr-2 overflow-hidden bg-white border-t border-r border-gray-200 rounded-tr-xl">
               <Sidebar draggedElement={draggedElement} motionsData={motionsData} />{" "}
-              <MidArea motionData={motionData} idname={idname} />
+              <MidArea motionData={motionData} idname={idname} spriteName={spriteName}  />
             </div>
             <div className="flex flex-row w-1/3 h-screen ml-2 overflow-hidden bg-white border-t border-l border-gray-200 rounded-tl-xl">
-              <PreviewArea showNewSpriteModal={showNewSpriteModal} spriteName={spriteName}  />
+              <PreviewArea showNewSpriteModal={showNewSpriteModal} spriteNames={spriteNames} newSpriteModal={newSpriteModal} whichSpriteName={whichSpriteName}  />
             </div>
           </div>
           </>

@@ -8,18 +8,30 @@ const PreviewArea = (props) => {
   
   const whichSprite = (spriteName) => {
     switch(spriteName){
-      case 'yellow' : return <CatSprite/>
-      case 'blue' : return <CatSpriteBlue/>
-      case 'red' : return <CatSpriteRed/>
-    }
+      case 'yellow' :  return <CatSprite/> ;
+      case 'blue' : return <CatSpriteBlue/>;
+      case 'red' : return <CatSpriteRed/>;
+    }    
   }
 
+  const whichClassName = (spriteName) => {
+    console.log(spriteName + "Sprite");
+    switch(spriteName){
+      case 'yellow' : return "yellowSpriteAnimation" ;
+      case 'blue' : return "blueSpriteAnimation";
+      case 'red' : return "redSpriteAnimation" ;
+    } 
+  }
+  
   return (
     <>
       <div className="absolute flex-none w-1/3 h-full p-2 overflow-hidden">
-        <div id="catSprite" className="moveForwardAnimation">
-          {whichSprite(props.spriteName)}
-        </div>
+          {/* { whichSprite(props.spriteName)} */}
+          {/* {sprites.map((items,key) => {return <div key={key}>{items}</div>})} */}
+          {props.spriteNames.map((item, key) => {
+            return <div id={item + "Sprite"} className={whichClassName(item)} onClick={() => {props.whichSpriteName(item)}} key={key}>{whichSprite(item)}</div>
+          })}
+        
         
         <button
           onClick={() => {

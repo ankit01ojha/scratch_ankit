@@ -1,26 +1,27 @@
-.moveForwardAnimation{
+.yellowSpriteAnimation{
     position: absolute;
     left : 0px;
     transition: left 10ms linear;
     overflow: hidden;
     transform: 10ms;
-    /* animation: moveForward 1s linear forwards; */
-    /* animation-duration: 1s; */
-    /* animation-iteration-count: forwards; */
+    /* background-color: blue; */
 
 }
-@keyframes moveForward {
-    /* 0% {left:0px} */
-    
-    /* 100% {left:10px} */
-  }
-@keyframes turnAnti {
-    100% {
-        transform: rotate(-15deg);
-      }
-  }
-@keyframes turnClock {
-    100% {
-        transform: rotate(15deg);
-      }
-  }
+
+.blueSpriteAnimation{
+  position: absolute;
+  left : 20px;
+  transition: left 10ms linear;
+  overflow: hidden;
+  transform: 10ms;
+
+}
+
+.redSpriteAnimation{
+  position: absolute;
+  left : 40px;
+  transition: left 10ms linear;
+  overflow: hidden;
+  transform: 10ms;
+
+}

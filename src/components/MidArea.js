@@ -5,13 +5,21 @@ import { useEffect } from "react";
 
 export default function MidArea( props) {
 
-  const [catSpriteData, setCatSpriteData] = useState({});
+  const [yellowCatSpriteData, setYellowCatSpriteData] = useState({});
+  const [blueCatSpriteData, setBlueCatSpriteData] = useState({});
+  const [redCatSpriteData, setRedCatSpriteData] = useState({});
   // const [move, setMove] = useState({});
   var degrees=0;
 
   useEffect(()=>{
-    if(document.getElementById('catSprite'))
-      setCatSpriteData(document.getElementById('catSprite'));
+    if(document.getElementById('yellowSprite'))
+      setYellowCatSpriteData(document.getElementById('yellowSprite'));
+    
+    if(document.getElementById('blueSprite'))
+    setBlueCatSpriteData(document.getElementById('blueSprite'));
+
+    if(document.getElementById('redSprite'))
+    setRedCatSpriteData(document.getElementById('redSprite'));
     // setMove();
   },[]);
 
@@ -58,10 +66,19 @@ export default function MidArea( props) {
       draggable={true}
       className="flex flex-col items-center flex-none w-1/2 h-full p-2 overflow-y-auto"
       onClick={(e) => {
-        catSpriteData.style.animation = "";
+        if(props.spriteName === 'yellow'){
+          var move = document.getElementById( 'yellowSprite' );
+        }
+        if(props.spriteName === 'blue'){
+          var move = document.getElementById( 'blueSprite' );
+        }
+        if(props.spriteName === 'red'){
+          var move = document.getElementById( 'redSprite' );
+        }
           setTimeout(function(){
             // catSpriteData.style.animation = animation(e.target.id);
-            var move = document.getElementById( 'catSprite' );
+            
+            // var move = document.getElementById( 'catSprite' );
             if(e.target.id === 'movestep'){
               move.style.left = ( move.offsetLeft + props.motionData['movestep'] ) + 'px';
             }
@@ -96,7 +113,7 @@ export default function MidArea( props) {
             }
             
           },10);
-          
+          move.style.animation = "";
           
       }}
     ></div>
