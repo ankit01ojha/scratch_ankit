@@ -22,14 +22,14 @@ const NewSprite = (props) => {
           </div>
         </nav>
 
-        <div className="container grid grid-cols-3 gap-2 mx-auto">
-          <div className="items-center mt-5 mb-5 border-2 border-white rounded cursor-pointer p-28 hover:border-gray-500" onClick={() => {props.whichSpriteName('yellow');  props.showNewSpriteModal(false);}}>
+        <div className="container grid grid-cols-3 gap-2 mx-auto bg-blue-200">
+          <div className="items-center mt-5 mb-5 border-2 border-white rounded cursor-pointer p-28 hover:border-gray-500 bg-indigo-50" onClick={() => {props.whichSpriteName('yellow');  props.showNewSpriteModal(false);}}>
             <CatSprite />
           </div>
-          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28 "  onClick={() => {props.whichSpriteName('blue'); props.showNewSpriteModal(false)}}>
+          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28 bg-indigo-50 "  onClick={() => {props.whichSpriteName('blue'); props.showNewSpriteModal(false)}}>
             <CatSpriteBlue />
           </div>
-          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28"  onClick={() => {props.whichSpriteName('red'); props.showNewSpriteModal(false)}}>
+          <div className="items-center w-full mt-5 mb-5 border-2 border-white rounded cursor-pointer hover:border-gray-500 p-28 bg-indigo-50"  onClick={() => {props.whichSpriteName('red'); props.showNewSpriteModal(false)}}>
             <CatSpriteRed />
           </div>
         </div>

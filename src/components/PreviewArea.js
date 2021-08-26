@@ -37,6 +37,7 @@ const PreviewArea = (props) => {
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);
              props.showNewSpriteModal(true) ;
+            
           }}
           className="absolute bottom-0 right-0 w-16 h-16 transition duration-200 ease-in bg-blue-500 rounded-full shadow z-2 hover:bg-green-500 active:shadow-lg mouse focus:outline-none"
         >
@@ -52,7 +53,7 @@ const PreviewArea = (props) => {
                                     C15.952,9,16,9.447,16,10z"
             />
           </svg>
-          {showMenu && (
+          {/* {showMenu && (
             <div className="absolute w-10 min-w-0 mb-4 ml-3 overflow-hidden bg-blue-500 rounded-full bottom-10">
               <div  className="relative z-0 px-1 hover:bg-green-500 active:shadow-lg">
                 <svg
@@ -127,7 +128,7 @@ const PreviewArea = (props) => {
                 </svg>{" "}
               </div>
             </div>
-          )}
+          )} */}
         </button>
       </div>
     </>
