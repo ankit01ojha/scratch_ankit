@@ -192,7 +192,7 @@ export default function MidArea( props) {
                 clearInterval(t);
               }
               
-            },1000)
+            },100)
             
           })
           
