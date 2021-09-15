@@ -36,9 +36,9 @@ const Events = (props) => {
         {/* <div type="button" className="px-2 mx-2 text-white border-2 border-gray-300 rounded">
             {"space"}
             </div> */}
-        <select className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
-          <option>space</option>
-          <option>up arrow</option>
+        <select id="e2a" className="px-2 mx-2 text-white bg-yellow-400 border-2 border-gray-300 rounded">
+          <option value="space">space</option>
+          <option value="up arrow">up arrow</option>
         </select>
         {"key pressed"}
       </div>

@@ -11,6 +11,13 @@ export default function App() {
   const [spriteName, setSpriteName] = useState('yellow');
   const [motionData, setMotionData] = useState({});
   const [spriteNames, setSpriteNames] = useState(['yellow']);
+  const [looksText, setLooksText] = useState('');
+  const [looksTime, setLooksTime] = useState(0);
+  const [showBlob, setShowBlob] = useState(false);
+  const [flagClicked, setFlagClicked] = useState(false);
+  const [controlsData, setControlsData] = useState({});
+  const [spriteClicked, setSpriteClicked] = useState(false);
+  const [showSprite, setShowSprite] = useState(true);
 
   useEffect(()=> {
     if(document.getElementById("overlay"))
@@ -33,6 +40,20 @@ export default function App() {
   const motionsData = (values) => {
     setMotionData({...values});
   }
+
+  const looksBlob = (text, timing, show) => {
+    setLooksText(text);
+    setLooksTime(timing);
+    setShowBlob(show);
+  }
+
+  const toggleFlagClicked = (value) => {
+    setFlagClicked(value);
+  }
+
+  const controlData = (values) => {
+    setControlsData({...values});
+  }
   
   return (
     <div className="pt-6 font-sans bg-blue-100">
@@ -42,11 +63,19 @@ export default function App() {
             <Sidebar
               draggedElement={draggedElement}
               motionsData={motionsData}
+              controlData={controlData}
             />{" "}
             <MidArea
               motionData={motionData}
               idname={idname}
               spriteName={spriteName}
+              looksBlob = {looksBlob}
+             flagClicked = {flagClicked}
+             toggleFlagClicked = {toggleFlagClicked}
+             controlsData={controlsData}
+             spriteClicked = {spriteClicked}
+             setSpriteClicked = {setSpriteClicked}
+             setShowSprite = {setShowSprite}
             />
           </div>
           <div className="flex flex-row w-1/3 h-screen ml-2 overflow-hidden bg-white border-t border-l border-gray-200 rounded-tl-xl">
@@ -55,6 +84,13 @@ export default function App() {
               spriteNames={spriteNames}
               newSpriteModal={newSpriteModal}
               whichSpriteName={whichSpriteName}
+              show = {showBlob}
+              text = {looksText}
+              time = {looksTime}
+              toggleFlagClicked = {toggleFlagClicked}
+              looksBlob={looksBlob}
+              setSpriteClicked = {setSpriteClicked}
+              showSprite = {showSprite}
             />
           </div>
         </div>

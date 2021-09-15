@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CatSprite from "./CatSprite";
 import CatSpriteBlue from "./CatSpriteBlue";
 import CatSpriteRed from "./CatSpriteRed";
+import Blob from "./Blob";
+import BlobBlue from "./BlobBlue";
+import BlobRed from "./BlobRed";
+import Icon from './Icon';
 
 const PreviewArea = (props) => {
   const [showMenu, setShowMenu] = useState(false);
-  
+ 
   const whichSprite = (spriteName) => {
     switch(spriteName){
-      case 'yellow' :  return <CatSprite/> ;
-      case 'blue' : return <CatSpriteBlue/>;
-      case 'red' : return <CatSpriteRed/>;
+      case 'yellow' :  return <><Blob show={props.show} time={props.time * 1000} text = {props.text} looksBlob={props.looksBlob}/><CatSprite/></> ;
+      case 'blue' : return <><BlobBlue show={props.show} time={props.time * 1000} text = {props.text} looksBlob={props.looksBlob}/><CatSpriteBlue/></>;
+      case 'red' : return <><BlobRed show={props.show} time={props.time * 1000} text = {props.text} looksBlob={props.looksBlob}/><CatSpriteRed/></>;
     }    
   }
 
   const whichClassName = (spriteName) => {
-    console.log(spriteName + "Sprite");
     switch(spriteName){
       case 'yellow' : return "yellowSpriteAnimation" ;
       case 'blue' : return "blueSpriteAnimation";
@@ -26,13 +29,17 @@ const PreviewArea = (props) => {
   return (
     <>
       <div className="absolute flex-none w-1/3 h-full p-2 overflow-hidden">
+        <button id="flagButton" onClick={() => {props.toggleFlagClicked(true)}}><Icon id="flagPreview" name="flag" size={30} className="mx-2 mb-2 text-green-600" /></button>
           {/* { whichSprite(props.spriteName)} */}
           {/* {sprites.map((items,key) => {return <div key={key}>{items}</div>})} */}
-          {props.spriteNames.map((item, key) => {
-            return <div id={item + "Sprite"} className={whichClassName(item)} onClick={() => {props.whichSpriteName(item)}} key={key}>{whichSprite(item)}</div>
-          })}
-        
-        
+          {props.showSprite && (
+            <>
+            {props.spriteNames.map((item, key) => {
+              return <div id={item + "Sprite"} className={whichClassName(item)} onClick={() => {props.whichSpriteName(item); props.setSpriteClicked(true)}} key={key}>{whichSprite(item)}</div>
+            })}
+            </>
+          )}
+
         <button
           onClick={() => {
             showMenu ? setShowMenu(false) : setShowMenu(true);

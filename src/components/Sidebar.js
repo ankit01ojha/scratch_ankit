@@ -11,7 +11,7 @@ export default function Sidebar(props) {
     <Motions draggedElement = {props.draggedElement} motionsData={props.motionsData}/>
     <Events draggedElement = {props.draggedElement}/>
     <Looks draggedElement = {props.draggedElement}/>
-    <Controls draggedElement = {props.draggedElement}/>
+    <Controls draggedElement = {props.draggedElement} controlData={props.controlData}/>
     </div>
   );
 }

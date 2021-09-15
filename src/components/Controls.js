@@ -1,10 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
+let values={};
 
 const Control = (props) => {
 
-    const [wait, setWait] = useState("1");
+    const [wait, setWait] = useState(1);
     const [repeat, setRepeat] = useState("10");
+
+    useEffect(()=>{
+     values['wait'] =wait;
+     values['repeat'] = repeat;
+     
+     props.controlData(values);
+    },[wait, repeat]);
+    
 
     const dragStart = (event, idname) => {
         props.draggedElement(idname);
@@ -31,7 +40,7 @@ const Control = (props) => {
                 setWait(evt.target.value);
               }}
             />{" "}
-            {"steps"}
+            {"seconds"}
           </div>
           <div
             id="repeat_control"
@@ -62,14 +71,14 @@ const Control = (props) => {
             {"forever"}
           </div>
           <div
-            id="repeat_wait_until"
+            id="if"
             className="flex flex-wrap px-2 py-1 my-2 text-sm text-white bg-yellow-500 rounded cursor-pointer"
             onDragStart={(e) => {
-              dragStart(e, "repeat_wait_until");
+              dragStart(e, "if");
             }}
             draggable={true}
           >
-            {"forever"}
+            {"if"}
           </div>
           <div
             id="control_stopAll"

@@ -1,6 +1,14 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 const Looks = (props) => {
+    const [sayValue, setSayValue] = useState('Hello !');
+    const [sayValue2, setSayValue2] = useState('Hello');
+    const [sayTime, setSayTime] = useState(2);
+    const [thinkValue, setThinkValue] = useState('Hmmm !');
+    const [thinkValue2, setThinkValue2] = useState('Hmmm');
+    const [thinkTime, setThinkTime] = useState(2);
+    
+
     const dragStart = (event, idname) => {
         props.draggedElement(idname);
         event.dataTransfer.setData(idname, event.target.id);
@@ -13,9 +21,9 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"say "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="Hello !" onChange={() => {}} />
+            <input type="text" id="l1a" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={sayValue} onChange={(evt) => {setSayValue(evt.target.value)}} />
             {"for"}
-            <input type="text" className="w-10 ml-2 mr-2 text-center text-black rounded-full" value="2" onChange={() => {}} />
+            <input type="text" id="l1b" className="w-10 ml-2 mr-2 text-center text-black rounded-full" value={sayTime} onChange={(evt) => {setSayTime(evt.target.value)}} />
             {"seconds"}
             
         </div>
@@ -24,7 +32,7 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"say "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="Hello !" onChange={() => {}} />
+            <input type="text" id="l2a" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={sayValue2} onChange={(evt) => {setSayValue2(evt.target.value)}} />
             
         </div>
         <div id="l3" className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-purple-500 rounded cursor-pointer" onDragStart={(e) => {
@@ -32,10 +40,10 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"think "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="Hmm... !" onChange={() => {}} />
+            <input type="text" id="l3a" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={thinkValue} onChange={(evt) => {setThinkValue(evt.target.value)}} />
             {"for"}
         
-            <input type="text" className="w-10 ml-2 mr-2 text-center text-black rounded-full" value="2" onChange={() => {}} />
+            <input type="text" id="l3b" className="w-10 ml-2 mr-2 text-center text-black rounded-full" value={thinkTime} onChange={(evt) => {setThinkTime(evt.target.value)}} />
             {"seconds"}
            
         </div>
@@ -44,7 +52,7 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"think "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="Hello !" onChange={() => {}} />
+            <input type="text" id="l4a" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={thinkValue2} onChange={(evt) => {setThinkValue2(evt.target.value)}} />
         </div>
         <div id="l5" className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-purple-500 rounded cursor-pointer" onDragStart={(e) => {
           dragStart(e, "l5");
