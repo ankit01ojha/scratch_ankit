@@ -7,6 +7,8 @@ const Looks = (props) => {
     const [thinkValue, setThinkValue] = useState('Hmmm !');
     const [thinkValue2, setThinkValue2] = useState('Hmmm');
     const [thinkTime, setThinkTime] = useState(2);
+    const [size, setSize] = useState(10);
+    const [sizep, setSizep] = useState(100);
     
 
     const dragStart = (event, idname) => {
@@ -91,7 +93,7 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"change size by "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="10" onChange={() => {}} />
+            <input id="l9a" type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={size} onChange={(e) => {setSize(e.target.value)}} />
             
         </div>
         <div id="l10" className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-purple-500 rounded cursor-pointer" onDragStart={(e) => {
@@ -99,7 +101,7 @@ const Looks = (props) => {
         }}
         draggable={true}>
             {"set size to "}
-            <input type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value="100" onChange={() => {}} />
+            <input id="l10a" type="text" className="ml-2 mr-2 text-center text-black rounded-full w-14" value={sizep} onChange={(e) => {setSizep(e.target.value)}} />
             {"%"}
         </div>
         <div id="l11" className="flex flex-row flex-wrap px-2 py-1 my-2 text-sm text-white bg-purple-500 rounded cursor-pointer" onDragStart={(e) => {

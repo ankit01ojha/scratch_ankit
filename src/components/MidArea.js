@@ -12,6 +12,7 @@ export default function MidArea( props) {
   // const [move, setMove] = useState({});
   var degrees=0;
   var counter = 0;
+  var scaleV = 0.1;
   var element={};
   const sleep = (milliseconds)=> {
     const date = Date.now();
@@ -164,6 +165,18 @@ export default function MidArea( props) {
 
       if(idname==='l15'){
         move.style.display = 'none';
+      }
+
+      if(idname === 'l9'){
+        var scaleValue = document.getElementById("l9a").value;
+        move.style.transform = `scale(${scaleV + (scaleValue/10)})`;
+        scaleV += (scaleValue/10);
+      }
+
+      if(idname === 'l10'){
+        var scaleValuep = document.getElementById("l10a").value;
+        console.log(scaleValuep);
+        move.style.transform = `scale(${(scaleValuep)/100})`;
       }
   }
 
@@ -321,6 +334,17 @@ export default function MidArea( props) {
               },100)
               
           }
+          if(idname === 'repeat_forever'){
+            counter = 0;
+              var t = setInterval(function(){
+                callAnimation('repeat_forever');
+                counter = counter + 1;
+                if(counter>=200){
+                  clearInterval(t);
+                }
+              },100)
+              
+          }
 
           if(idname === 'l14'){
             move.style.display = 'block';
@@ -328,6 +352,19 @@ export default function MidArea( props) {
 
           if(idname==='l15'){
             move.style.display = 'none';
+          }
+
+          if(idname === 'l9'){
+            var scaleValue = document.getElementById("l9a").value;
+            console.log(scaleV);
+            move.style.transform = `scale(${scaleV + (scaleValue/10)})`;
+            scaleV += (scaleValue/10);
+          }
+
+          if(idname === 'l10'){
+            var scaleValuep = document.getElementById("l10a").value;
+            console.log(scaleValuep);
+            move.style.transform = `scale(${(scaleValuep)/100})`;
           }
       }}
     ></div>

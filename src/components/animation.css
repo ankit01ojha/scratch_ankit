@@ -4,7 +4,9 @@
     transition: left 10ms linear;
     overflow: hidden;
     transform: 10ms;
+    top:10rem;
     /* background-color: blue; */
+    /* transform: scale(1); */
 
 }
 
@@ -14,7 +16,7 @@
   transition: left 10ms linear;
   overflow: hidden;
   transform: 10ms;
-  top: 7rem;
+  top: 20rem;
 }
 
 .redSpriteAnimation{
@@ -23,7 +25,7 @@
   transition: left 10ms linear;
   overflow: hidden;
   transform: 10ms;
-  top: 14rem
+  top: 30rem
 }
 
 .overlay{
