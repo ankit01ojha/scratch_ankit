@@ -128,12 +128,6 @@ export default function MidArea( props) {
       
       if(idname === "l1"){
           props.looksBlob(document.getElementById("l1a").value, document.getElementById("l1b").value, true);
-          // sleep(document.getElementById("l1b").value);
-          // document.getElementById("yellowBlob").display = "block";
-          // setTimeout(function(){
-          //   document.getElementById("yellowBlob").display = "none";
-          // },1000)
-          
        
       }
       if(idname === "l2"){
@@ -187,10 +181,7 @@ export default function MidArea( props) {
         idArr.push(children[i].id);
       }
       
-      if(idname === 'sprite'){
-        console.log(idArr);
-        idArr.forEach(item => {animation(item)})
-      }else{
+      
         var flagIndex = idArr.indexOf(idname);
 
         if(flagIndex > -1){
@@ -209,8 +200,6 @@ export default function MidArea( props) {
             
           })
           
-
-        }
       }
       
       
@@ -226,7 +215,7 @@ export default function MidArea( props) {
 
   useEffect(() => {
     if(props.spriteClicked){
-      callAnimation("sprite");
+      callAnimation("e3");
     }
     props.setSpriteClicked(false);
   },[props.spriteClicked])
